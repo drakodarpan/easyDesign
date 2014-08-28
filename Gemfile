@@ -43,3 +43,5 @@ gem 'devise'
 
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.0.2.1'
+
+gem 'font-awesome-rails'
