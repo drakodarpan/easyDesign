@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < ApplicationController
   def facebook
-    auth = request.env["Omniauth.auth"]
+    auth = request.env["omniauth.auth"]
 
     data = {
       :nombre => auth.info.first_name,
@@ -11,9 +11,9 @@ class OmniauthCallbacksController < ApplicationController
       :uid => auth.uid
     }
 
-    @usuario = Usuario.find_or_creat_by_omniauth(data)
+    @usuario = Usuario.find_or_create_by_omniauth(data)
 
-    if @usaurio.persisted?
+    if @usuario.persisted?
       sign_in_and_redirect @usuario, :event => :authentication
     else
       session[:Omniauth_errors] = @usuario.errors.full_messages.to_sentence unless @usuario.save

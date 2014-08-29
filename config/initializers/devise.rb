@@ -43,6 +43,7 @@ Devise.setup do |config|
 
   config.omniauth :facebook, "App ID", "App Secret"
 
+
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
