@@ -44,4 +44,9 @@ gem 'devise'
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.0.2.1'
 
+# Instalacion de font-awesome-rails
 gem 'font-awesome-rails'
+# Instalación de omniauth
+gem 'omniauth'
+# Instalación del middleware de facebook
+gem 'omniauth-facebook'
