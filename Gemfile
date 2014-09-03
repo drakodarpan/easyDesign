@@ -50,3 +50,5 @@ gem 'font-awesome-rails'
 gem 'omniauth'
 # Instalación del middleware de facebook
 gem 'omniauth-facebook'
+
+gem "figaro"

@@ -41,7 +41,7 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
 
-  config.omniauth :facebook, "App ID", "App Secret"
+  config.omniauth :facebook, ENV["APP_FACEBOOK_ID"], ENV["APP_FACEBOOK_SECRET"]
 
 
   # Configure which authentication keys should be case-insensitive.
