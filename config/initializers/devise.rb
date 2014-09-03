@@ -7,8 +7,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = 'b69791b9be8c6950847208fd1343b9bb283d7863aff9da3f8eea381f059e66b46d75f65e5a6759b86d3da679b4765d1b41242db641be14b378a78ef22d9a4e00'
 
-  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -42,7 +40,7 @@ Devise.setup do |config|
   # config.request_keys = []
 
   config.omniauth :facebook, ENV["APP_FACEBOOK_ID"], ENV["APP_FACEBOOK_SECRET"]
-
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
