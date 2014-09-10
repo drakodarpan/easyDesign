@@ -40,6 +40,7 @@ Devise.setup do |config|
   # config.request_keys = []
 
   config.omniauth :facebook, ENV["APP_FACEBOOK_ID"], ENV["APP_FACEBOOK_SECRET"]
+  config.omniauth :twitter, ENV["APP_TWITTER_ID"], ENV["APP_TWITTER_SECRET"]
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
 
   # Configure which authentication keys should be case-insensitive.

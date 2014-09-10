@@ -52,3 +52,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem "figaro"
+
+gem 'omniauth-twitter'
