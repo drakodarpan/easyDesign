@@ -4,6 +4,12 @@ class Usuario < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :posts
+
+  def email_required?
+   false
+  end
+
   devise :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   validates :username, presence: true, uniqueness: true,
@@ -20,11 +26,12 @@ class Usuario < ActiveRecord::Base
         nombre: auth[:nombre],
         apellido: auth[:apellido],
         username: auth[:username],
-        email: auth[:email],
+        email: "",
         uid: auth[:uid],
         provider: auth[:provider],
         password: Devise.friendly_token[0,20]
       )
     end
+    usuario
   end
 end
